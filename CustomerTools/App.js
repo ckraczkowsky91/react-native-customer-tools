@@ -4,18 +4,15 @@ import {
   Text
 } from 'react-native';
 
-import
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default class CustomerTools extends Component {
-  render(){
-    return(
-        <Text style={styles.text}>Hello world!</Text>
-    )
-  };
-};
+import AppMenu from './components/AppMenu';
 
-const styles = StyleSheet.create({
-  text: {
-    alignItems: 'center'
+const StackNavigator = createStackNavigator({
+  Home: {
+    screen: AppMenu
   }
 });
+
+export default createAppContainer(StackNavigator);
